@@ -4,32 +4,64 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calculadora de Ângulos</title>
+<style>
+    .fundo{
+        background-image: linear-gradient(25deg, black, gray);
+        color: white;
+        height: 100vh;
+        text-align: center;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+
+    .campos{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    #resultado{
+        font-size: 20px;
+    }
+
+    #selo{
+        position: absolute;
+        bottom: 5%;
+        left: 82%;
+    }
+</style>
 </head>
 <body>
 
-<h2>Calculadora de Ângulos</h2>
+<div class="fundo">
+    
 
-<h3>Ângulo 1</h3>
-<label for="graus1">Graus:</label>
-<input type="number" id="graus1" value="0">
-<label for="minutos1">Minutos:</label>
-<input type="number" id="minutos1" value="0">
-<label for="segundos1">Segundos:</label>
-<input type="number" id="segundos1" value="0">
+    <div class="campos">
+    <h2>Calculadora de Ângulos</h2><br><br>
+    <h3>Ângulo 1</h3>
+    <label for="graus1">Graus:</label>
+    <input type="number" id="graus1" value="0">
+    <label for="minutos1">Minutos:</label>
+    <input type="number" id="minutos1" value="0">
+    <label for="segundos1">Segundos:</label>
+    <input type="number" id="segundos1" value="0">
+    <br><br>
+    <h3>Ângulo 2</h3>
+    <label for="graus2">Graus:</label>
+    <input type="number" id="graus2" value="0">
+    <label for="minutos2">Minutos:</label>
+    <input type="number" id="minutos2" value="0">
+    <label for="segundos2">Segundos:</label>
+    <input type="number" id="segundos2" value="0"> <br> <br>
 
-<h3>Ângulo 2</h3>
-<label for="graus2">Graus:</label>
-<input type="number" id="graus2" value="0">
-<label for="minutos2">Minutos:</label>
-<input type="number" id="minutos2" value="0">
-<label for="segundos2">Segundos:</label>
-<input type="number" id="segundos2" value="0">
+    <button onclick="somar()">Somar</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <br> <br>
+    <p id="resultado">Resultado:</p>
+    </div>
 
-<button onclick="somar()">Somar</button>
-<button onclick="subtrair()">Subtrair</button>
-
-<p id="resultado">Resultado:</p>
-
+    <p id="selo">Selo Catloc de qualidade &#128512;</p>
+</div>
 <script>
 function somar() {
     var graus1 = parseInt(document.getElementById("graus1").value);
