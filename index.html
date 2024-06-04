@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Ângulos</title>
+</head>
+<body>
+
+<h2>Calculadora de Ângulos</h2>
+
+<h3>Ângulo 1</h3>
+<label for="graus1">Graus:</label>
+<input type="number" id="graus1" value="0">
+<label for="minutos1">Minutos:</label>
+<input type="number" id="minutos1" value="0">
+<label for="segundos1">Segundos:</label>
+<input type="number" id="segundos1" value="0">
+
+<h3>Ângulo 2</h3>
+<label for="graus2">Graus:</label>
+<input type="number" id="graus2" value="0">
+<label for="minutos2">Minutos:</label>
+<input type="number" id="minutos2" value="0">
+<label for="segundos2">Segundos:</label>
+<input type="number" id="segundos2" value="0">
+
+<button onclick="somar()">Somar</button>
+<button onclick="subtrair()">Subtrair</button>
+
+<p id="resultado">Resultado:</p>
+
+<script>
+function somar() {
+    var graus1 = parseInt(document.getElementById("graus1").value);
+    var minutos1 = parseInt(document.getElementById("minutos1").value);
+    var segundos1 = parseInt(document.getElementById("segundos1").value);
+
+    var graus2 = parseInt(document.getElementById("graus2").value);
+    var minutos2 = parseInt(document.getElementById("minutos2").value);
+    var segundos2 = parseInt(document.getElementById("segundos2").value);
+
+    var totalSegundos1 = graus1 * 3600 + minutos1 * 60 + segundos1;
+    var totalSegundos2 = graus2 * 3600 + minutos2 * 60 + segundos2;
+
+    var totalSegundos = totalSegundos1 + totalSegundos2;
+
+    var novoGraus = Math.floor(totalSegundos / 3600);
+    var resto = totalSegundos % 3600;
+    var novoMinutos = Math.floor(resto / 60);
+    var novoSegundos = resto % 60;
+
+    document.getElementById("resultado").textContent = "Resultado: " + novoGraus + " graus, " + novoMinutos + " minutos, " + novoSegundos + " segundos.";
+}
+
+function subtrair() {
+    var graus1 = parseInt(document.getElementById("graus1").value);
+    var minutos1 = parseInt(document.getElementById("minutos1").value);
+    var segundos1 = parseInt(document.getElementById("segundos1").value);
+
+    var graus2 = parseInt(document.getElementById("graus2").value);
+    var minutos2 = parseInt(document.getElementById("minutos2").value);
+    var segundos2 = parseInt(document.getElementById("segundos2").value);
+
+    var totalSegundos1 = graus1 * 3600 + minutos1 * 60 + segundos1;
+    var totalSegundos2 = graus2 * 3600 + minutos2 * 60 + segundos2;
+
+    var totalSegundos = totalSegundos1 - totalSegundos2;
+
+    var novoGraus = Math.floor(totalSegundos / 3600);
+    var resto = totalSegundos % 3600;
+    var novoMinutos = Math.floor(resto / 60);
+    var novoSegundos = resto % 60;
+
+    document.getElementById("resultado").textContent = "Resultado: " + novoGraus + " graus, " + novoMinutos + " minutos, " + novoSegundos + " segundos.";
+}
+</script>
+
+</body>
+</html>
